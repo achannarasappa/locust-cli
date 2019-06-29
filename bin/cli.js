@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 const yargs = require('yargs');
-const run = require('../cli/run');
-const start = require('../cli/start');
-const generate = require('../cli/generate');
-const validate = require('../cli/validate');
-const stop = require('../cli/stop');
-const info = require('../cli/info');
+const run = require('../lib/run');
+const start = require('../lib/start');
+const generate = require('../lib/generate');
+const validate = require('../lib/validate');
+const stop = require('../lib/stop');
+const info = require('../lib/info');
 
 yargs
-  .scriptName('cli')
+  .scriptName('locust')
   .command('run', 'run in single job mode', (yargs) => {
 
     return yargs
@@ -31,9 +31,9 @@ yargs
         .alias('l', 'includeLinks')
         .alias('c', 'includeCookies')
         .demandCommand(1, 'A file path to a job file is required')
-        .usage('cli run <path_to_file>')
-        .example('cli run job.js', 'Runs a single job and returns the results')
-        .example('cli run job.js -l -t -c', 'Include all response fields')
+        .usage('locust run <path_to_file>')
+        .example('locust run job.js', 'Runs a single job and returns the results')
+        .example('locust run job.js -l -t -c', 'Include all response fields')
         .help()
 
     }, async ({ _: [ cmd, filePath ], includeHtml, includeLinks, includeCookies }) => {
@@ -60,9 +60,9 @@ yargs
         .alias('b', 'bootstrap')
         .alias('r', 'reset')
         .demandCommand(1, 'A file path to a job file is required')
-        .usage('cli start <path_to_file>')
-        .example('cli start job.js', 'Starts a job')
-        .example('cli start -b job.js', 'Starts redis and browserless containers if they are not already running')
+        .usage('locust start <path_to_file>')
+        .example('locust start job.js', 'Starts a job')
+        .example('locust start -b job.js', 'Starts redis and browserless containers if they are not already running')
         .help()
 
     }, async ({ _: [ cmd, filePath ], bootstrap, reset }) => {
@@ -78,7 +78,7 @@ yargs
     .command('*', false, (yargs) => {
 
       return yargs
-        .usage('cli stop')
+        .usage('locust stop')
         .help()
 
     }, async ({ _: [ cmd, filePath ], bootstrap }) => {
@@ -100,8 +100,8 @@ yargs
 
       return yargs
         .demandCommand(1, 'A file path to a job file is required')
-        .usage('cli validate <path_to_file>')
-        .example('cli validate job.js', 'Validates a job and outputs any issues')
+        .usage('locust validate <path_to_file>')
+        .example('locust validate job.js', 'Validates a job and outputs any issues')
         .help()
 
     }, async ({ _: [ cmd, filePath ] }) => {
@@ -118,8 +118,8 @@ yargs
 
       return yargs
         .demandCommand(1, 'A file path to a job file is required')
-        .usage('cli info')
-        .example('cli info', 'snapshot of current queue state')
+        .usage('locust info')
+        .example('locust info', 'snapshot of current queue state')
         .help()
 
     }, async ({ _: [ cmd, filePath ] }) => {
@@ -134,6 +134,6 @@ yargs
   .alias('v', 'version')
   .alias('h', 'help')
   .demandCommand(1, 'A command is required')
-  .usage('cli <command>')
+  .usage('locust <command>')
   .help()
   .argv;
