@@ -15,15 +15,18 @@
   "author": "Ani Channarasappa",
   "license": "MIT",
   "devDependencies": {
+    "@achannarasappa/eslint-config": "^1.0.4",
     "@hapi/hapi": "^18.3.1",
     "@hapi/vision": "^5.5.2",
     "chai": "^4.2.0",
     "docker-names": "^1.1.1",
+    "eslint": "^6.6.0",
     "handlebars": "^4.1.2",
     "mocha": "^5.2.0",
     "sinon": "^7.2.3"
   },
   "dependencies": {
+    "@achannarasappa/locust": "^1.0.0",
     "inquirer": "^6.2.1",
     "ioredis": "^4.3.0",
     "moment": "^2.24.0",
@@ -33,5 +36,16 @@
     "shelljs": "^0.8.3",
     "terminal-kit": "^1.28.0",
     "yargs": "^12.0.5"
+  },
+  "eslintConfig": {
+    "extends": "@achannarasappa/eslint-config",
+    "env": {
+      "mocha": true,
+      "node": true
+    },
+    "rules": {
+      "consistent-return": "off",
+      "no-console": "off"
+    }
   }
 }
