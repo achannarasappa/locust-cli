@@ -1,4 +1,4 @@
-# clocust-cli
+# locust-cli
 
 Distributed serverless web crawling/web scraping with support for js execution, proxying, and autoscaling
 

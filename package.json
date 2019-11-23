@@ -1,7 +1,7 @@
 {
-  "name": "locust-cli",
-  "version": "1.0.0",
-  "description": "Utility tool and command line UI to accelerate development of locust jobs",
+  "name": "@achannarasappa/locust-cli",
+  "version": "0.1.0",
+  "description": "Utility tool and command line UI to develope locust jobs",
   "bin": {
     "cli": "bin/cli.js"
   },
