@@ -9,6 +9,8 @@
     "lib": "lib"
   },
   "scripts": {
+    "lint": "eslint ./lib ./test ./bin",
+    "lint:fix": "eslint --fix ./lib ./test ./bin",
     "test": "mocha --exit --grep @remote --invert --timeout 10000 './{,!(node_modules)/**/}*.spec.js'",
     "test:watch": "npm run test -- --watch"
   },
@@ -21,7 +23,8 @@
     "chai": "^4.2.0",
     "docker-names": "^1.1.1",
     "eslint": "^6.6.0",
-    "handlebars": "^4.5.2",
+    "handlebars": "^4.5.3",
+    "husky": "^3.1.0",
     "mocha": "^5.2.0",
     "sinon": "^7.2.3"
   },
@@ -46,6 +49,11 @@
     "rules": {
       "consistent-return": "off",
       "no-console": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm audit"
     }
   }
 }
