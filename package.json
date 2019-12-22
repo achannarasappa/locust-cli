@@ -9,9 +9,10 @@
     "lib": "lib"
   },
   "scripts": {
+    "coverage": "nyc --reporter=text --reporter=lcov mocha --exit --grep '@term' --invert --timeout 10000 './lib/*.spec.js'",
     "lint": "eslint ./lib ./test ./bin",
     "lint:fix": "eslint --fix ./lib ./test ./bin",
-    "test": "mocha --exit --grep @remote --invert --timeout 10000 './{,!(node_modules)/**/}*.spec.js'",
+    "test": "mocha --exit --timeout 10000 './{,!(node_modules)/**/}*.spec.js'",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Ani Channarasappa",
@@ -26,6 +27,7 @@
     "handlebars": "^4.5.3",
     "husky": "^3.1.0",
     "mocha": "^5.2.0",
+    "nyc": "^14.1.1",
     "sinon": "^7.2.3"
   },
   "dependencies": {
@@ -50,6 +52,21 @@
       "consistent-return": "off",
       "no-console": "off"
     }
+  },
+  "nyc": {
+    "branches": 100,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100,
+    "all": true,
+    "check-coverage": true,
+    "skip-full": true,
+    "include": [
+      "lib/**/*.js"
+    ],
+    "exclude": [
+      "lib/**/*.spec.js"
+    ]
   },
   "husky": {
     "hooks": {
