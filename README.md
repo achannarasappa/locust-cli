@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/achannarasappa/locust-cli.svg?branch=master)](https://travis-ci.com/achannarasappa/locust-cli) [![Coverage Status](https://coveralls.io/repos/github/achannarasappa/locust-cli/badge.svg?branch=master)](https://coveralls.io/github/achannarasappa/locust?branch=master)
+
 <p align="center">
 <img align="center" width="100" src="https://locust.dev/img/locust-logo.svg" />
 </p>

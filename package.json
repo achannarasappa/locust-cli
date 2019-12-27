@@ -10,6 +10,7 @@
   },
   "scripts": {
     "coverage": "nyc --reporter=text --reporter=lcov mocha --exit --timeout 10000 './lib/**/*.spec.js'",
+    "coverage:coveralls": "npm run coverage && ./node_modules/.bin/nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./lib ./test ./bin",
     "lint:fix": "eslint --fix ./lib ./test ./bin",
     "test": "mocha --exit --timeout 10000 './{,!(node_modules)/**/}*.spec.js'",
@@ -22,6 +23,7 @@
     "@hapi/hapi": "^18.4.0",
     "@hapi/vision": "^5.5.2",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.9",
     "docker-names": "^1.1.1",
     "eslint": "^6.6.0",
     "handlebars": "^4.5.3",
