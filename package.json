@@ -1,7 +1,7 @@
 {
   "name": "@achannarasappa/locust-cli",
-  "version": "0.2.0",
-  "description": "Utility tool and command line UI to develope locust jobs",
+  "version": "0.3.0",
+  "description": "Utility to develop and test locust jobs",
   "bin": {
     "cli": "bin/cli.js"
   },
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@achannarasappa/locust": "^1.0.0",
+    "@achannarasappa/locust-cli-dashboard": "^0.1.0",
     "inquirer": "^6.2.1",
     "ioredis": "^4.3.0",
     "moment": "^2.24.0",
@@ -39,7 +40,6 @@
     "puppeteer": "^1.11.0",
     "ramda": "^0.26.1",
     "shelljs": "^0.8.3",
-    "terminal-kit": "^1.28.0",
     "yargs": "^12.0.5"
   },
   "eslintConfig": {
