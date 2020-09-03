@@ -24,7 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "@achannarasappa/eslint-config": "^1.0.4",
-    "@hapi/hapi": "^18.4.0",
+    "@hapi/hapi": "^19.1.1",
     "@hapi/vision": "^5.5.2",
     "chai": "^4.2.0",
     "coveralls": "^3.0.9",
